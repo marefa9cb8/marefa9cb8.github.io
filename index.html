@@ -46,64 +46,44 @@
 <body   >
   <div id="front-wrapper">
   <div id="hero">
-    <div id="hero-inner" class="container">
-      <div class="span10 offset1">
+    <div id="hero-inner" >
+      <div class="container">
+        <div class="span10 offset1">
   <h1>
     balar Blog
   </h1>
   <h2>balar's Memorandum by octopess.</h2>
 </div>
 
+      </div>
     </div>
   </div>
   <section id="sub-hero">
     <div class="container">
       <div class="row">
-  <div class="span4">
-    <h2>about me</h2>
-<p>A little something about me.</p>
-
-  </div>
-  <div class="span6">
+  <div class="navbar">
+    <div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">balar Blog</a>
+    <ul class="nav">
+      <li><a href="/blog/archives">All Blogs</a></li>
+      
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="https://www.google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:marefa9cb8.github.io" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
     
-<h2>recent public projects</h2>
-<dl id="gh_repos" class="dl-horizontal" data-github-user="marefa9cb8" data-github-repo-count="0" data-github-skip-forks="true" data-github-skip-github-io="">
-  <dd class="loading">Status updating...</dd>
-</dl>
-<script src="/javascripts/github.js" type="text/javascript"> </script>
-<script src="/javascripts/libs/jXHR.js" type="text/javascript"> </script>
-
-
   </div>
-  <div class="span2">
-    <h2>found on</h2>
-
-<a href="https://github.com/marefa9cb8/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
-
-
-
-
-
-
-
-<a href="http://twitter.com/marefa9cb8" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
   </div>
 </div>
@@ -120,9 +100,7 @@
 
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.--> 
-        <h1 class="entry-title"><a href="/blog/2015/07/09/second-post/">2回目の投稿</a></h1>
-        
+      <h1 class="entry-title"><a href="/blog/2015/07/09/second-post/">2回目の投稿</a></h1>
     
     
       <p class="meta">
@@ -165,7 +143,6 @@
 </div>
   
   
-  
 
 
 </div>
@@ -178,9 +155,7 @@
 
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.--> 
-        <h1 class="entry-title"><a href="/blog/2015/07/09/first-post/">First Post</a></h1>
-        
+      <h1 class="entry-title"><a href="/blog/2015/07/09/first-post/">First Post</a></h1>
     
     
       <p class="meta">
@@ -221,7 +196,6 @@
 </div>
   
   
-  
 
 
 </div>
@@ -257,48 +231,24 @@
     </ul>
     <h2><a href="/blog/archives">archives</a></h2>
   </div>
-  <div class="span3">
+  <div class="span6">
     
+<h2>recent public projects</h2>
+<dl id="gh_repos" class="dl-horizontal" data-github-user="marefa9cb8" data-github-repo-count="0" data-github-skip-forks="true">
+  <dd class="loading">Status updating...</dd>
+</dl>
+<script src="/javascripts/github.js" type="text/javascript"> </script>
+<script src="/javascripts/libs/jXHR.js" type="text/javascript"> </script>
+
 
   </div>
-  <div class="span4">
+  <div class="span3">
     
 <h2>twitter</h2>
 <a href="https://twitter.com/marefa9cb8" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @marefa9cb8</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <div class="tweet" data-twitter-user="marefa9cb8">
 </div>
-
-
-  </div>
-  <div class="span2">
-    <h2>found on</h2>
-
-<a href="https://github.com/marefa9cb8/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
-
-
-
-
-
-
-
-<a href="http://twitter.com/marefa9cb8" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   </div>
@@ -313,10 +263,19 @@
   - Copyright &copy; 2015 - balar
 </p>
 <p class="pull-right">
-  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
   
-    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+    <span>Designed by <a href="http://blog.hyfather.com" target="_blank">Nikhil
+  Mungel</a>. Based on <a href="https://github.com/sevenadrian/foxslide"
+  target="_blank">foxslide</a>.</span><br/>
   
+  <span>
+    Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>.
+  </span>
+  <span>
+    Cover photo
+    by <a href="http://www.flickr.com/photos/69912667@N07/6778147487/"
+    target="_blank">Carrie Nelson</a>.
+  </span>
 </p>
 
   </div>
