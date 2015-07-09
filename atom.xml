@@ -4,7 +4,7 @@
   <title><![CDATA[balar Blog]]></title>
   <link href="http://marefa9cb8.github.io/atom.xml" rel="self"/>
   <link href="http://marefa9cb8.github.io/"/>
-  <updated>2015-07-09T08:52:08+09:00</updated>
+  <updated>2015-07-09T09:03:48+09:00</updated>
   <id>http://marefa9cb8.github.io/</id>
   <author>
     <name><![CDATA[balar]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2回目の投稿]]></title>
+    <link href="http://marefa9cb8.github.io/blog/2015/07/09/second-post/"/>
+    <updated>2015-07-09T08:58:07+09:00</updated>
+    <id>http://marefa9cb8.github.io/blog/2015/07/09/second-post</id>
+    <content type="html"><![CDATA[<h1>今回は日本語が出来るか確かめてみました！！</h1>
+
+<h3>何か備忘録的な何か出来たらいいですね…(多分やらない)</h3>
+
+<p>Fin.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[First Post]]></title>
