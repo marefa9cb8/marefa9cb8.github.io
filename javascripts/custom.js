@@ -65,13 +65,17 @@ $(function(){
   });
 
   var githubInfo = $("#gh_repos");
+  if(githubInfo.data('github-user')) {
 
-  github.showRepos({
-    user: githubInfo.data('github-user'),
-    count: githubInfo.data('github-repo-count'),
-    skip_forks: githubInfo.data('github-skip-forks'),
-    target: githubInfo
-  });
+    github.showRepos({
+      user: githubInfo.data('github-user'),
+      count: githubInfo.data('github-repo-count'),
+      skip_forks: githubInfo.data('github-skip-forks'),
+      skip_github_io: githubInfo.data('github-skip-github-io'),
+      target: githubInfo
+    });
+  }
+
 
   var $container = $('#post-container');
   $container.imagesLoaded(function(){
