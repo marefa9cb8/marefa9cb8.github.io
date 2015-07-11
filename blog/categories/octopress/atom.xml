@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | balar Blog]]></title>
   <link href="http://marefa9cb8.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://marefa9cb8.github.io/"/>
-  <updated>2015-07-12T05:11:06+09:00</updated>
+  <updated>2015-07-12T05:13:16+09:00</updated>
   <id>http://marefa9cb8.github.io/</id>
   <author>
     <name><![CDATA[balar]]></name>
@@ -35,11 +35,15 @@
 
 <h4>Rubyのインストール</h4>
 
-<p>Rubyをインストールします。<br/>
-* ArchLinuxの場合<br/>
+<p>Rubyをインストールします。</p>
+
+<ul>
+<li>ArchLinuxの場合<br/>
 <code>
 $ sudo pacman -S ruby
-</code></p>
+</code></li>
+</ul>
+
 
 <p>bundlerをインストールします。<br/>
 <code>

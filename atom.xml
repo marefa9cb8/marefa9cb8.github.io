@@ -4,7 +4,7 @@
   <title><![CDATA[balar Blog]]></title>
   <link href="http://marefa9cb8.github.io/atom.xml" rel="self"/>
   <link href="http://marefa9cb8.github.io/"/>
-  <updated>2015-07-12T05:11:06+09:00</updated>
+  <updated>2015-07-12T05:13:16+09:00</updated>
   <id>http://marefa9cb8.github.io/</id>
   <author>
     <name><![CDATA[balar]]></name>
@@ -35,8 +35,12 @@
 
 <h4>Rubyのインストール</h4>
 
-<p>Rubyをインストールします。<br/>
-* ArchLinuxの場合</p>
+<p>Rubyをインストールします。</p>
+
+<ul>
+<li>ArchLinuxの場合</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo pacman -S ruby</span></code></pre></td></tr></table></div></figure>
