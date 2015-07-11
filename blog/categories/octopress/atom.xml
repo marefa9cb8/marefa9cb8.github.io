@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | balar Blog]]></title>
   <link href="http://marefa9cb8.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://marefa9cb8.github.io/"/>
-  <updated>2015-07-12T05:13:16+09:00</updated>
+  <updated>2015-07-12T05:16:51+09:00</updated>
   <id>http://marefa9cb8.github.io/</id>
   <author>
     <name><![CDATA[balar]]></name>
@@ -31,7 +31,7 @@
 </ul>
 
 
-<h2><a name="pre"> 準備</h2>
+<h2><a name="pre"> 準備 </a></h2>
 
 <h4>Rubyのインストール</h4>
 
@@ -64,7 +64,7 @@ $ sudo pacman -S git
 リポジトリ名は<em>username.github.io</em>とします。<br/>
 <em>username</em>には自分のユーザー名を入力します。</p>
 
-<h2><a name="install"> インストール</h2>
+<h2><a name="install"> インストール </a></h2>
 
 <p>Octopressをインストールします。
 <code>
@@ -74,7 +74,7 @@ $ bundle install
 $ rake install
 </code></p>
 
-<h2><a name="setting"> 設定</h2>
+<h2><a name="setting"> 設定 </a></h2>
 
 <h4>Gitの設定</h4>
 
@@ -124,7 +124,7 @@ $ rake gen_deploy
 </code>
 でも上記の二つのコマンドを入力したことになります。</p>
 
-<h2><a name="post"> 記事の作成</h2>
+<h2><a name="post"> 記事の作成 </a></h2>
 
 <pre><code>$ rake new_post
 Enter a title for your post:
@@ -154,7 +154,7 @@ $ rake generate
 $ rake deploy
 </code></p>
 
-<h2><a name="end"> 最後に</h2>
+<h2><a name="end"> 最後に </a></h2>
 
 <p>以上でOctopressの導入が完成しました。<br/>
 次回はテーマの変更について書こうと思います。</p>
