@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | balar Blog]]></title>
+  <link href="http://marefa9cb8.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://marefa9cb8.github.io/"/>
+  <updated>2015-07-12T05:11:06+09:00</updated>
+  <id>http://marefa9cb8.github.io/</id>
+  <author>
+    <name><![CDATA[balar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopressの導入(1)]]></title>
+    <link href="http://marefa9cb8.github.io/blog/2015/07/12/first-octopress/"/>
+    <updated>2015-07-12T03:40:49+09:00</updated>
+    <id>http://marefa9cb8.github.io/blog/2015/07/12/first-octopress</id>
+    <content type="html"><![CDATA[<h1>Octopressの導入(1)～準備から記事の公開まで～</h1>
+
+<h2>目次</h2>
+
+<ul>
+<li><a href="#pre">準備</a></li>
+<li><a href="#install">インストール</a></li>
+<li><a href="#setting">設定</a></li>
+<li><a href="#post">記事の作成</a></li>
+<li><a href="#end">最後に</a></li>
+</ul>
+
+
+<h2><a name="pre"> 準備</h2>
+
+<h4>Rubyのインストール</h4>
+
+<p>Rubyをインストールします。<br/>
+* ArchLinuxの場合<br/>
+<code>
+$ sudo pacman -S ruby
+</code></p>
+
+<p>bundlerをインストールします。<br/>
+<code>
+$ gem install bundler
+</code></p>
+
+<h4>Gitのインストール</h4>
+
+<p>Gitをインストールします。<br/>
+* ArchLinuxの場合<br/>
+<code>
+$ sudo pacman -S git
+</code></p>
+
+<h4>GItHubでのリポジトリ作成</h4>
+
+<p><a href="https://github.com/">GitHub</a>でリポジトリを作成します。<br/>
+リポジトリ名は<em>username.github.io</em>とします。<br/>
+<em>username</em>には自分のユーザー名を入力します。</p>
+
+<h2><a name="install"> インストール</h2>
+
+<p>Octopressをインストールします。
+<code>
+$ git clone git://github.com/imathis/octopress.git octopress
+$ cd octopress
+$ bundle install
+$ rake install
+</code></p>
+
+<h2><a name="setting"> 設定</h2>
+
+<h4>Gitの設定</h4>
+
+<p>Gitのユーザー情報を設定します。<br/>
+<code>
+$ git config --global user.name "username"
+$ git config --global user.email "username@example.com"
+</code>
+次に、鍵の設定をします。<br/>
+<code>
+$ ssh-keygen -t rsa -C "username@example.com"
+</code><br/>
+GitHubの<a href="https://github.com/settings/profile">Personal settings</a>のページを開きます。<br/>
+左側のメニューより<a href="https://github.com/settings/ssh">SSH Keys</a>のページを開きます。<br/>
+<em>ADD SSH key</em>をクリックし、Titleは任意の名称を、Keyには先程生成した鍵(<code>./ssh/id_rsa.pub</code>)の内容を書き込み、最後にAdd keyをクリックします。</p>
+
+<h4>Octopressの初期設定</h4>
+
+<p>_config.ymlを編集します。
+<code>
+title:              # Used in the header and title tags
+subtitle:           # A description used in the header
+author:             # Your name, for RSS, Copyright, Metadata
+</code>
+上記の項目を自身の情報に編集します。(他の情報も必要に応じて編集します)</p>
+
+<h4>OctopressのGitHubへのデプロイ設定</h4>
+
+<pre><code>$ rake setup_github_pages
+Enter the read/write url for your repository:
+</code></pre>
+
+<p>と表示されるので、先程作成したGitHubのページのリポジトリURLを指定します。
+<code>
+git@github.com:username/username.github.io.git
+</code>
+<em>username</em>には自分のユーザー名を入力します。<br/>
+最後に以下のコマンドを入力します。
+<code>
+$ rake generate
+$ rake deploy
+</code>
+これで <a href="http://username.github.io">http://username.github.io</a> にアクセスすると出来上がっています。<br/>
+追記<br/>
+<code>
+$ rake gen_deploy
+</code>
+でも上記の二つのコマンドを入力したことになります。</p>
+
+<h2><a name="post"> 記事の作成</h2>
+
+<pre><code>$ rake new_post
+Enter a title for your post:
+</code></pre>
+
+<p>と表示されるので、記事のタイトルを入力します。(注：日本語入力不可)<br/>
+すると、<br/>
+<code>
+source/_posts/*-*-*-new-post.markdown
+</code>
+という記事が作成されるので、それを編集します。<br/>
+記事の記法はMarkdownです。</p>
+
+<pre><code>---
+layout: post
+title: "new-post"
+date: *-*-* *:*:* 
+comments: true
+categories: [category1, ...]
+---
+ここに記事を書きます。
+</code></pre>
+
+<p>記事を書いたらデプロイします。
+<code>
+$ rake generate
+$ rake deploy
+</code></p>
+
+<h2><a name="end"> 最後に</h2>
+
+<p>以上でOctopressの導入が完成しました。<br/>
+次回はテーマの変更について書こうと思います。</p>
+
+<p>Fin.</p>
+]]></content>
+  </entry>
+  
+</feed>

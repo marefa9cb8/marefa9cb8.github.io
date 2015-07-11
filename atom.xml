@@ -4,7 +4,7 @@
   <title><![CDATA[balar Blog]]></title>
   <link href="http://marefa9cb8.github.io/atom.xml" rel="self"/>
   <link href="http://marefa9cb8.github.io/"/>
-  <updated>2015-07-12T03:37:36+09:00</updated>
+  <updated>2015-07-12T05:11:06+09:00</updated>
   <id>http://marefa9cb8.github.io/</id>
   <author>
     <name><![CDATA[balar]]></name>
@@ -12,5 +12,195 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopressの導入(1)]]></title>
+    <link href="http://marefa9cb8.github.io/blog/2015/07/12/first-octopress/"/>
+    <updated>2015-07-12T03:40:49+09:00</updated>
+    <id>http://marefa9cb8.github.io/blog/2015/07/12/first-octopress</id>
+    <content type="html"><![CDATA[<h1>Octopressの導入(1)～準備から記事の公開まで～</h1>
+
+<h2>目次</h2>
+
+<ul>
+<li><a href="#pre">準備</a></li>
+<li><a href="#install">インストール</a></li>
+<li><a href="#setting">設定</a></li>
+<li><a href="#post">記事の作成</a></li>
+<li><a href="#end">最後に</a></li>
+</ul>
+
+
+<h2><a name="pre"> 準備</h2>
+
+<h4>Rubyのインストール</h4>
+
+<p>Rubyをインストールします。<br/>
+* ArchLinuxの場合</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo pacman -S ruby</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>bundlerをインストールします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install bundler</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Gitのインストール</h4>
+
+<p>Gitをインストールします。<br/>
+* ArchLinuxの場合</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo pacman -S git</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h4>GItHubでのリポジトリ作成</h4>
+
+<p><a href="https://github.com/">GitHub</a>でリポジトリを作成します。<br/>
+リポジトリ名は<em>username.github.io</em>とします。<br/>
+<em>username</em>には自分のユーザー名を入力します。</p>
+
+<h2><a name="install"> インストール</h2>
+
+<p>Octopressをインストールします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>$ cd octopress
+</span><span class='line'>$ bundle install
+</span><span class='line'>$ rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><a name="setting"> 設定</h2>
+
+<h4>Gitの設定</h4>
+
+<p>Gitのユーザー情報を設定します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global user.name "username"
+</span><span class='line'>$ git config --global user.email "username@example.com"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>次に、鍵の設定をします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-keygen -t rsa -C "username@example.com"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+GitHubの<a href="https://github.com/settings/profile">Personal settings</a>のページを開きます。<br/>
+左側のメニューより<a href="https://github.com/settings/ssh">SSH Keys</a>のページを開きます。<br/>
+<em>ADD SSH key</em>をクリックし、Titleは任意の名称を、Keyには先程生成した鍵(<code>./ssh/id_rsa.pub</code>)の内容を書き込み、最後にAdd keyをクリックします。</p>
+
+<h4>Octopressの初期設定</h4>
+
+<p>_config.ymlを編集します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>title:              # Used in the header and title tags
+</span><span class='line'>subtitle:           # A description used in the header
+</span><span class='line'>author:             # Your name, for RSS, Copyright, Metadata</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上記の項目を自身の情報に編集します。(他の情報も必要に応じて編集します)</p>
+
+<h4>OctopressのGitHubへのデプロイ設定</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake setup_github_pages
+</span><span class='line'>Enter the read/write url for your repository:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と表示されるので、先程作成したGitHubのページのリポジトリURLを指定します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git@github.com:username/username.github.io.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>username</em>には自分のユーザー名を入力します。<br/>
+最後に以下のコマンドを入力します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake generate
+</span><span class='line'>$ rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで <a href="http://username.github.io">http://username.github.io</a> にアクセスすると出来上がっています。<br/>
+追記</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>でも上記の二つのコマンドを入力したことになります。</p>
+
+<h2><a name="post"> 記事の作成</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake new_post
+</span><span class='line'>Enter a title for your post:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と表示されるので、記事のタイトルを入力します。(注：日本語入力不可)<br/>
+すると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source/_posts/*-*-*-new-post.markdown</span></code></pre></td></tr></table></div></figure>
+
+
+<p>という記事が作成されるので、それを編集します。<br/>
+記事の記法はMarkdownです。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "new-post"
+</span><span class='line'>date: *-*-* *:*:* 
+</span><span class='line'>comments: true
+</span><span class='line'>categories: [category1, ...]
+</span><span class='line'>---
+</span><span class='line'>ここに記事を書きます。</span></code></pre></td></tr></table></div></figure>
+
+
+<p>記事を書いたらデプロイします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake generate
+</span><span class='line'>$ rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><a name="end"> 最後に</h2>
+
+<p>以上でOctopressの導入が完成しました。<br/>
+次回はテーマの変更について書こうと思います。</p>
+
+<p>Fin.</p>
+]]></content>
+  </entry>
   
 </feed>
